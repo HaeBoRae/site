@@ -4,7 +4,7 @@ var $grid =  $('.grid').isotope({
       columnWidth: '.grid__col-sizer',
       gutter: '.grid__gutter-sizer',
     },
-    percentPosition: true,
+    percentPosition: true, 
     stagger: 30,
     // nicer reveal transition
     visibleStyle: { transform: 'translateY(0)', opacity: 1 },
