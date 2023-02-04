@@ -97,11 +97,11 @@
             </div>
         </section>
         <!-- Portfolio Grid-->
-        <section class="page-section bg-light" id="portfolio">
+        <section class="page-section bg-light" id="commissions">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Commissions</h2>
+                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
@@ -414,7 +414,7 @@
                             <div class="col-lg-8">
                                 <div class="modal-body">
                                     <!-- Project details-->
-                                    <h2 class="text-uppercase">Project Name</h2>
+                                    <h2 class="text-uppercase">Full body - character</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                     <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
                                     <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
@@ -428,6 +428,52 @@
                                             Illustration
                                         </li>
                                     </ul>
+                                    <div id="smart-button-container">
+                                        <div style="text-align: center;">
+                                          <div id="paypal-button-container"></div>
+                                        </div>
+                                      </div>
+                                    <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
+                                    <script>
+                                      function initPayPalButton() {
+                                        paypal.Buttons({
+                                          style: {
+                                            shape: 'rect',
+                                            color: 'white',
+                                            layout: 'vertical',
+                                            label: 'paypal',
+                                            
+                                          },
+                                  
+                                          createOrder: function(data, actions) {
+                                            return actions.order.create({
+                                              purchase_units: [{"description":"Full Body - character","amount":{"currency_code":"USD","value":38}}]
+                                            });
+                                          },
+                                  
+                                          onApprove: function(data, actions) {
+                                            return actions.order.capture().then(function(orderData) {
+                                              
+                                              // Full available details
+                                              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                                  
+                                              // Show a success message within this page, e.g.
+                                              const element = document.getElementById('paypal-button-container');
+                                              element.innerHTML = '';
+                                              element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                                  
+                                              // Or go to another URL:  actions.redirect('thank_you.html');
+                                              
+                                            });
+                                          },
+                                  
+                                          onError: function(err) {
+                                            console.log(err);
+                                          }
+                                        }).render('#paypal-button-container');
+                                      }
+                                      initPayPalButton();
+                                    </script>
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close Project
