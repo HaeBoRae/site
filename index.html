@@ -111,16 +111,15 @@
                                 <div class="portfolio-hover">
                                     <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="assets/img/portfolio/1.jpg" alt="..." />
+                                <img class="img-fluid" src="assets/img/portfolio/fullBody.jpg" alt="..." />
                             </a>
                             <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Threads</div>
-                                <div class="portfolio-caption-subheading text-muted">Illustration</div>
+                                <div class="portfolio-caption-heading">Full body - character</div>
+                                <!-- <div class="portfolio-caption-subheading text-muted">Illustration</div> -->
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 2-->
+                    <!-- <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
                                 <div class="portfolio-hover">
@@ -135,7 +134,6 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4">
-                        <!-- Portfolio item 3-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
                                 <div class="portfolio-hover">
@@ -150,7 +148,6 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
-                        <!-- Portfolio item 4-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
                                 <div class="portfolio-hover">
@@ -165,7 +162,6 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
-                        <!-- Portfolio item 5-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
                                 <div class="portfolio-hover">
@@ -180,7 +176,6 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                        <!-- Portfolio item 6-->
                         <div class="portfolio-item">
                             <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
                                 <div class="portfolio-hover">
@@ -193,7 +188,7 @@
                                 <div class="portfolio-caption-subheading text-muted">Photography</div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section>
@@ -416,9 +411,9 @@
                                     <!-- Project details-->
                                     <h2 class="text-uppercase">Full body - character</h2>
                                     <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/1.jpg" alt="..." />
+                                    <img class="img-fluid d-block mx-auto" src="assets/img/portfolio/fullBody.jpg" alt="..." />
                                     <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
+                                    <!-- <ul class="list-inline">
                                         <li>
                                             <strong>Client:</strong>
                                             Threads
@@ -427,7 +422,14 @@
                                             <strong>Category:</strong>
                                             Illustration
                                         </li>
-                                    </ul>
+                                    </ul> -->
+                                    <div id="smart-button-container">
+                                        <div style="text-align: center;">
+                                          <div id="paypal-button-container"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- paypal -->
                                     <div id="smart-button-container">
                                         <div style="text-align: center;">
                                           <div id="paypal-button-container"></div>
@@ -438,8 +440,8 @@
                                       function initPayPalButton() {
                                         paypal.Buttons({
                                           style: {
-                                            shape: 'rect',
-                                            color: 'white',
+                                            shape: 'pill',
+                                            color: 'blue',
                                             layout: 'vertical',
                                             label: 'paypal',
                                             
@@ -447,7 +449,7 @@
                                   
                                           createOrder: function(data, actions) {
                                             return actions.order.create({
-                                              purchase_units: [{"description":"Full Body - character","amount":{"currency_code":"USD","value":38}}]
+                                              purchase_units: [{"description":"Full body - character","amount":{"currency_code":"USD","value":80}}]
                                             });
                                           },
                                   
@@ -474,6 +476,7 @@
                                       }
                                       initPayPalButton();
                                     </script>
+
                                     <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
                                         <i class="fas fa-xmark me-1"></i>
                                         Close Project
